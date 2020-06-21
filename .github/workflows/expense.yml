@@ -7,8 +7,7 @@ name: Expense-Tracker
 on:
   push:
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
+
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -38,4 +37,4 @@ jobs:
       run: npm install -g surge
       
     - name: Deploying on surge
-      run: surge ./build faarhan-expensetrack.surge.sh --token ${{ secrets.SURGE__TOKEN }}
+      run: surge ./build http://farhaan_expensetrack.surge.sh/ --token ${{ secrets.SURGE__TOKEN }}
